@@ -23,12 +23,16 @@ public class IntegrationTestServer {
 
 	private static final int DEFAULT_MAX_PORT_INCREMENT = 10;
 	private static final Logger Log = LoggerFactory.getLogger(IntegrationTestServer.class);
-	private final JettyServerFactory serverFactory;
+	private JettyServerFactory serverFactory;
 	private Server jettyServer;
 	private URL baseUrl = null;
-	private final HttpClient httpClient;
+	private HttpClient httpClient;
 	private int portNumber;
 	private int maxPortNumber;
+
+	public IntegrationTestServer() {
+		super();
+	}
 
 	public IntegrationTestServer(int portNumber, HttpClient httpClient, JettyServerFactory serverFactory) throws Exception {
 		this.setPortNumber(portNumber);
