@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Class-Path: aopalliance-1.0.jar commons-io-1.3.2.jar commons-lang3-3.1
+ .jar commons-logging-1.1.1.jar cxf-api-2.7.6.jar cxf-rt-bindings-xml-
+ 2.7.6.jar cxf-rt-core-2.7.6.jar cxf-rt-frontend-jaxrs-2.7.6.jar cxf-r
+ t-transports-http-2.7.6.jar geronimo-javamail_1.4_spec-1.7.1.jar guav
+ a-15.0-rc1.jar guava-tests-15.0-rc1.jar javax.servlet-3.0.0.v20111201
+ 1016.jar javax.ws.rs-api-2.0-m10.jar jaxb-impl-2.1.13.jar jetty-http-
+ 9.0.2.v20130417.jar jetty-io-9.0.2.v20130417.jar jetty-server-9.0.2.v
+ 20130417.jar jetty-util-9.0.2.v20130417.jar joda-time-2.3.jar jsr305-
+ 1.3.9.jar logback-classic-1.0.13.jar logback-core-1.0.13.jar slf4j-ap
+ i-1.7.5.jar spring-aop-3.2.3.RELEASE.jar spring-beans-3.2.3.RELEASE.j
+ ar spring-context-3.2.3.RELEASE.jar spring-core-3.2.3.RELEASE.jar spr
+ ing-expression-3.2.3.RELEASE.jar spring-web-3.2.3.RELEASE.jar spring-
+ webmvc-3.2.3.RELEASE.jar stax2-api-3.1.1.jar woodstox-core-asl-4.2.0.
+ jar wsdl4j-1.6.3.jar xmlschema-core-2.0.3.jar
+
