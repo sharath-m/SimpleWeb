@@ -15,14 +15,14 @@
 		<java.version>1.6</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
+
 		<org.eclipse.jetty.version>8.1.7.v20120910</org.eclipse.jetty.version>
-		
+
 		<dom4j.version>1.6.1</dom4j.version>
-        <xmlunit.version>1.3</xmlunit.version>
-        
-        <httpcomponents.version>4.1.3</httpcomponents.version>
-		
+		<xmlunit.version>1.3</xmlunit.version>
+
+		<httpcomponents.version>4.1.3</httpcomponents.version>
+
 		<!-- Spring -->
 		<spring-framework.version>3.2.3.RELEASE</spring-framework.version>
 
@@ -36,7 +36,7 @@
 	</properties>
 
 	<dependencies>
-		
+
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
@@ -102,50 +102,50 @@
 			<artifactId>guava-tests</artifactId>
 			<version>15.0-rc1</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
-		    <version>3.0.1</version>
-		    <scope>provided</scope>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- jetty -->
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-http</artifactId>
-            <version>${org.eclipse.jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-io</artifactId>
-            <version>${org.eclipse.jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-server</artifactId>
-            <version>${org.eclipse.jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-webapp</artifactId>
-            <version>${org.eclipse.jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-security</artifactId>
-            <version>${org.eclipse.jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-util</artifactId>
-            <version>${org.eclipse.jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-servlet</artifactId>
-            <version>${org.eclipse.jetty.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-http</artifactId>
+			<version>${org.eclipse.jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-io</artifactId>
+			<version>${org.eclipse.jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>${org.eclipse.jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>${org.eclipse.jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-security</artifactId>
+			<version>${org.eclipse.jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-util</artifactId>
+			<version>${org.eclipse.jetty.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>${org.eclipse.jetty.version}</version>
+		</dependency>
 
 
 		<!-- Utils -->
@@ -174,25 +174,25 @@
 			<artifactId>joda-time</artifactId>
 			<version>2.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>4.2.5</version>
 		</dependency>
-		
+
 		<!-- Xml -->
 		<dependency>
-            <groupId>dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>${dom4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>xmlunit</groupId>
-            <artifactId>xmlunit</artifactId>
-            <version>${xmlunit.version}</version>
-        </dependency>        
-		
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>${dom4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>xmlunit</groupId>
+			<artifactId>xmlunit</artifactId>
+			<version>${xmlunit.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -211,7 +211,7 @@
 					<include>**/*</include>
 				</includes>
 			</resource>
-			
+
 		</resources>
 		<pluginManagement>
 			<plugins>
@@ -228,105 +228,144 @@
 						<target>1.6</target>
 					</configuration>
 				</plugin>
-
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.1.1</version>
+					<configuration>
+						<warName>SimpleWeb</warName>
+						<ignoreWebxml>false</ignoreWebxml>
+						<webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+					</configuration>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<configuration>
 						<excludes>
 							<exclude>**/*IT.java</exclude>
+							<exclude>**/*IntegrationTest.java</exclude>
 						</excludes>
 					</configuration>
-					<executions>
-						<execution>
-							<id>integration-test</id>
-							<phase>integration-test</phase>
-							<goals>
-								<goal>test</goal>
-							</goals>
-							<configuration>
-								<excludes>
-									<exclude>none</exclude>
-								</excludes>
-								<includes>
-									<include>**/*IT.java</include>
-								</includes>
-							</configuration>
-						</execution>
-					</executions>
 				</plugin>
 
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <version>2.15</version>
-        <configuration>
-            <includes>
-                <include>**/IT*.java</include>
-                <include>**/*IT.java</include>
-                <include>**/*ITCase.java</include>
-                <include>**/IntegrationTest*.java</include>
-            </includes>
-        </configuration>
-        <executions>
-            <execution>
-                <id>failsafe-integration-tests</id>
-                <phase>integration-test</phase>
-                <goals>
-                    <goal>integration-test</goal>
-                </goals>
-            </execution>
-            <execution>
-                <id>failsafe-verify</id>
-                <phase>verify</phase>
-                <goals>
-                    <goal>verify</goal>
-                </goals>
-            </execution>
-        </executions>
-    </plugin>
-		 <plugin>
-	            <groupId>org.mortbay.jetty</groupId>
-	            <artifactId>maven-jetty-plugin</artifactId>
-	            <version>6.1.7</version>
-	            <configuration>
-	<!--                   <connectors> -->
-	<!--                     <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector"> -->
-	<!--                       <port>8080</port> -->
-	<!--                       <maxIdleTime>3600000</maxIdleTime> -->
-	<!--                     </connector> -->
-	<!--                   </connectors> -->
-					<useTestScope>true</useTestScope>
-	                <contextPath>/</contextPath>
-	                <scanIntervalSeconds>3</scanIntervalSeconds>
-	                <scanTargetPatterns>
-	                    <scanTargetPattern>
-	                        <directory>src/main/webapp/WEB-INF</directory>
-	                    </scanTargetPattern>
-	                </scanTargetPatterns>
-	            </configuration>
-	                <executions>
-	                    <execution>
-	                        <id>start-jetty</id>
-	                        <phase>pre-integration-test</phase>
-	                        <goals>
-	                          <goal>run-exploded</goal>
-	                        </goals>
-	                        <configuration>
-	                          <scanIntervalSeconds>0</scanIntervalSeconds>
-	                          <daemon>true</daemon>
-	                        </configuration>
-	                    </execution>
-	                    <execution>
-	                        <id>stop-jetty</id>
-	                        <phase>post-integration-test</phase>
-	                        <goals>
-	                          <goal>stop</goal>
-	                        </goals>
-	                    </execution>
-	                </executions>
-		        </plugin>
+				<plugin>
+				   <groupId>org.codehaus.cargo</groupId>
+				   <artifactId>cargo-maven2-plugin</artifactId>
+				   <version>1.3.3</version>
+				   <configuration>
+				   	  <wait>false</wait>
+				      <container>
+				         <containerId>jetty8x</containerId>
+				         <type>embedded</type>
+				      </container>
+				      <configuration>
+				         <properties>
+				            <cargo.servlet.port>8080</cargo.servlet.port>
+				         </properties>
+				      </configuration>
+				   </configuration>
+				</plugin>
+				
+				
+<!-- 				<plugin> -->
+<!-- 					<groupId>org.mortbay.jetty</groupId> -->
+<!-- 					<artifactId>maven-jetty-plugin</artifactId> -->
+<!-- 					<version>6.1.7</version> -->
+<!-- 					<configuration> -->
+<!-- 						<connectors> -->
+<!-- 							<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector"> -->
+<!-- 								<port>8080</port> -->
+<!-- 								<maxIdleTime>3600000</maxIdleTime> -->
+<!-- 							</connector> -->
+<!-- 						</connectors> -->
+<!-- 						<useTestScope>true</useTestScope> -->
+<!-- 						<contextPath>/</contextPath> -->
+<!-- 						<scanIntervalSeconds>3</scanIntervalSeconds> -->
+<!-- 						<scanTargetPatterns> -->
+<!-- 							<scanTargetPattern> -->
+<!-- 								<directory>src/main/webapp/WEB-INF</directory> -->
+<!-- 							</scanTargetPattern> -->
+<!-- 						</scanTargetPatterns> -->
+<!-- 					</configuration> -->
+<!-- 					<executions> -->
+<!-- 						<execution> -->
+<!-- 							<id>start-jetty</id> -->
+<!-- 							<phase>pre-integration-test</phase> -->
+<!-- 							<goals> -->
+<!-- 								<goal>run-exploded</goal> -->
+<!-- 							</goals> -->
+<!-- 							<configuration> -->
+<!-- 								<scanIntervalSeconds>0</scanIntervalSeconds> -->
+<!-- 								<daemon>true</daemon> -->
+<!-- 							</configuration> -->
+<!-- 						</execution> -->
+<!-- 						<execution> -->
+<!-- 							<id>stop-jetty</id> -->
+<!-- 							<phase>post-integration-test</phase> -->
+<!-- 							<goals> -->
+<!-- 								<goal>stop</goal> -->
+<!-- 							</goals> -->
+<!-- 						</execution> -->
+<!-- 					</executions> -->
+<!-- 				</plugin> -->
+
 			</plugins>
 		</pluginManagement>
 	</build>
+	
+	<!--  mvn clean install -Pintegration  -->
+	<profiles>
+		<profile>
+			<id>integration</id>
+			<build>
+				<plugins>
+					<plugin>
+					   <groupId>org.codehaus.cargo</groupId>
+					   <artifactId>cargo-maven2-plugin</artifactId>
+					   <configuration>
+					      <wait>false</wait>
+					   </configuration>
+					   <executions>
+					      <execution>
+					         <id>start-server</id>
+					         <phase>pre-integration-test</phase>
+					         <goals>
+					            <goal>start</goal>
+					         </goals>
+					      </execution>
+					      <execution>
+					         <id>stop-server</id>
+					         <phase>post-integration-test</phase>
+					         <goals>
+					            <goal>stop</goal>
+					         </goals>
+					      </execution>
+					   </executions>
+					</plugin>
+				   <plugin>
+				      <groupId>org.apache.maven.plugins</groupId>
+				      <artifactId>maven-surefire-plugin</artifactId>
+				      <executions>
+				         <execution>
+				            <phase>integration-test</phase>
+				            <goals>
+				               <goal>test</goal>
+				            </goals>
+				            <configuration>
+				               <excludes>
+				                  <exclude>none</exclude>
+				               </excludes>
+				               <includes>
+				               	  <include>**/*IT.java</include>
+				                  <include>**/*IntegrationTest.java</include>
+				               </includes>
+				            </configuration>
+				         </execution>
+				      </executions>
+				   </plugin>										
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
