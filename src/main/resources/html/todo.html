@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		html {
+			font: small/1.4 "Lucida Grande", Tahoma, sans-serif;
+		}
+		div.todoAdd {
+			margin: 20px 50px;
+			padding: 7px 20px;
+			height:25px;
+			width:560px;
+			background: #eee;
+			border:1px solid #aaa;
+		}
+		div.todoList {
+			margin: 10px 50px;				
+		}
+		div.todoList > div.todo > div{float:left;}
+	</style>
+	
+	<link rel="stylesheet"
+		href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+			$("#saveTasks").hide();
+		
+		$('#addTask').bind('click', function() {
+			var todoDescription = $("#todoDescription").val();
+			addTask(todoDescription);
+			displaySaveButton();
+			resetTodoForm();
+		})
+	});
+	
+	function addTask(desc) {
+		$("div.todoList").prepend('<div class="todo">'+
+								'<div><input type="checkbox" class="check_todo"/></div>'+
+								'<div class="todoDesc"><input type"text" class"todoDescInput" name="todoItem" value="'+ desc+'"/></div>' +
+							'</div>' );
+	}
+	
+	function displaySaveButton() {
+		if ($("#saveTasks:not(:empty)")) {
+			$("#saveTasks").show();
+		}
+	}
+	
+	function resetTodoForm() {
+		$("#todoDescription").val('');
+	}
+	</script>
+
+</head>
+<body>
+	<div class="todoAdd">
+			<input type="text" id="todoDescription" name="todo" size="55"/> 
+			<input type="submit" id="addTask" value="Add" />
+	</div>
+	
+	<form method="post" action="/SimpleWeb/todo" accept="application/xml" target="results" onsubmit="">
+		<div class="todoList">
+		</div>
+		<input type="submit" id="saveTasks" value="Save" />
+	</form>
+</body>
+</html>
