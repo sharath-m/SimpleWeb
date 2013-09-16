@@ -9,6 +9,7 @@
 	<jaxrs:server id="api" address="/">
 		<jaxrs:serviceBeans>
 			<bean id="pingApi" class="uk.co.malavalli.api.PingApi" />
+			<bean id="todoApi" class="uk.co.malavalli.api.Todo.TodoApi" />
 		</jaxrs:serviceBeans>
 		<jaxrs:inInterceptors>
 		</jaxrs:inInterceptors>
