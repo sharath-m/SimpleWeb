@@ -1,33 +1,21 @@
 package uk.co.malavalli.api;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import uk.co.malavalli.server.IntegrationTestServer;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
 import com.jayway.restassured.RestAssured;
 
+@ContextConfiguration(locations = { "classpath:application-context.xml" })
+@TestExecutionListeners({ ApiTestExecutionListener.class, DependencyInjectionTestExecutionListener.class })
+@RunWith(SpringJUnit4ClassRunner.class)
 public abstract class AbstractApiTest {
-
-	@Autowired
-	public IntegrationTestServer integrationTestServer;
 
 	public AbstractApiTest() {
 		super();
-	}
-
-	@Before
-	public void startServer() throws Exception {
 		RestAssured.port = 8989;
-		integrationTestServer.start();
-	}
-
-	@After
-	public void stopServer() throws Exception {
-		integrationTestServer.stop();
 	}
 
 }

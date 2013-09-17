@@ -1,4 +1,4 @@
-package uk.co.malavalli.api;
+package uk.co.malavalli.api.Todo;
 
 import static com.jayway.restassured.RestAssured.get;
 import static com.jayway.restassured.RestAssured.given;
@@ -11,9 +11,9 @@ import org.springframework.test.annotation.DirtiesContext;
 
 import com.jayway.restassured.RestAssured;
 
-public class PingTestIT {
+public class TodoApiTestIT {
 
-	Logger LOG = LoggerFactory.getLogger(getClass());
+	protected Logger LOG = LoggerFactory.getLogger(getClass());
 
 	@Before
 	public void before() throws Exception {
@@ -22,10 +22,14 @@ public class PingTestIT {
 
 	@Test
 	@DirtiesContext
-	public void ping() throws Exception {
+	public void getTodoHtml() throws Exception {
+
 		given().
 				expect().statusCode(200).
-				get("/SimpleWeb/ping").asString();
-		LOG.info(get("/SimpleWeb/ping").asString());
+				contentType("text/html").
+				// body(containsString(html)).
+				get("/SimpleWeb/todo");
+		LOG.info(get("/SimpleWeb/todo").asString());
 	}
+
 }

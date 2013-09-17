@@ -2,6 +2,7 @@ package uk.co.malavalli.api.Todo;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -40,12 +41,12 @@ public class TodoApi {
 	}
 
 	@POST
-	@Produces({ MediaType.TEXT_PLAIN, MediaType.APPLICATION_FORM_URLENCODED })
+	@Consumes({ MediaType.TEXT_PLAIN, MediaType.APPLICATION_FORM_URLENCODED })
 	@Descriptions({
 			@Description(value = "", target = DocTarget.METHOD)
 	})
 	public Response createTasks(@Context Request request,
-			@Description("The provider specific end range parameter (optional)") @FormParam("todoItem") final List<String> todoItems)
+			@Description("Todo item") @FormParam("todoItem") final List<String> todoItems)
 			throws Exception {
 		if (todoItems == null)
 		{

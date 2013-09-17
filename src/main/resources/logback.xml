@@ -17,9 +17,9 @@
 	</appender>
 
 	<!--<logger name="org.hibernate" level="debug"/> -->
-	<!-- Uncomment and add your logger here: <logger name="org.springframework.samples.service.service" 
-		level="debug"/> -->
+<!-- 	<logger name="org.springframework level="debug"/> -->
 
+<!-- 	<logger name="org.eclipse.jetty" level="debug"/> -->
 	<root level="info">
 		<appender-ref ref="console" />
 	</root>
