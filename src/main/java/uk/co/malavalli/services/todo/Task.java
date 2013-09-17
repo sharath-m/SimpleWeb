@@ -1,4 +1,4 @@
-package uk.co.malavalli.Todo;
+package uk.co.malavalli.services.todo;
 
 import java.util.List;
 

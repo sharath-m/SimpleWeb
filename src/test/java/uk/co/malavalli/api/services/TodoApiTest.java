@@ -1,4 +1,4 @@
-package uk.co.malavalli.api.Todo;
+package uk.co.malavalli.api.services;
 
 import static com.jayway.restassured.RestAssured.get;
 import static com.jayway.restassured.RestAssured.given;
@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 
 import uk.co.malavalli.api.AbstractApiTest;
+import uk.co.malavalli.api.services.TodoApi;
 import uk.co.malavalli.classloader.utils.ClasspathResourceLoader;
 
 //import static com.jayway.restassured.matcher.RestAssuredMatchers.*;

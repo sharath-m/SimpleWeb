@@ -11,7 +11,7 @@ import org.springframework.test.annotation.DirtiesContext;
 
 import com.jayway.restassured.RestAssured;
 
-public class PingTestIT {
+public class PingApiTestIT {
 
 	Logger LOG = LoggerFactory.getLogger(getClass());
 

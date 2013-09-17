@@ -1,4 +1,4 @@
-package uk.co.malavalli.api.Todo;
+package uk.co.malavalli.api.services;
 
 import static com.jayway.restassured.RestAssured.get;
 import static com.jayway.restassured.RestAssured.given;
