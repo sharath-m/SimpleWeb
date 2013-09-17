@@ -16,4 +16,5 @@
 		<property name="extension" value=".html"/>
 	</bean>
 
+	<bean id="guidGenerator" class="uk.co.malavalli.common.GuidGenerator"></bean>
 </beans>

@@ -13,7 +13,7 @@ import org.apache.cxf.jaxrs.model.wadl.Descriptions;
 import org.apache.cxf.jaxrs.model.wadl.DocTarget;
 import org.joda.time.DateTime;
 
-import uk.co.malavalli.api.common.MimeTypes;
+import uk.co.malavalli.common.MimeTypes;
 
 @Path("/ping")
 public class PingApi {

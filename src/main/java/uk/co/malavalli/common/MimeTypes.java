@@ -1,4 +1,4 @@
-package uk.co.malavalli.api.common;
+package uk.co.malavalli.common;
 
 public class MimeTypes {
 

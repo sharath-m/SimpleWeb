@@ -14,6 +14,7 @@
 		<jaxrs:serviceBeans>
 			<ref bean="pingApi"/>
 			<ref bean="todoApi"/>
+			<ref bean="userApi"/>
 		</jaxrs:serviceBeans>
 		<jaxrs:inInterceptors>
 		</jaxrs:inInterceptors>
@@ -25,4 +26,7 @@
 
 	<bean id="pingApi" class="uk.co.malavalli.api.PingApi"/>
 	<bean id="todoApi" class="uk.co.malavalli.api.services.TodoApi"/>
+	<bean id="userApi" class="uk.co.malavalli.api.services.UserApi">
+		<property name="userService" ref="userService"/>
+	</bean>
 </beans>
